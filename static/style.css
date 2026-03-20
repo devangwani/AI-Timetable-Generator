@@ -1,0 +1,271 @@
+/* Import a modern, clean font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap');
+
+:root {
+    /* Color Palette */
+    --bg-color: #0d1117; /* Deep GitHub-style dark background */
+    --card-bg: rgba(255, 255, 255, 0.03); /* Translucent glass effect */
+    --border-color: rgba(255, 255, 255, 0.08);
+    --accent-gradient: linear-gradient(135deg, #3b82f6, #8b5cf6); /* Electric Blue to Neon Purple */
+    --text-main: #f0f6fc;
+    --text-muted: #8b949e;
+    --input-bg: #161b22;
+    --input-focus-ring: rgba(139, 92, 246, 0.3);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h2 {
+    font-weight: 800;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 24px;
+    text-align: center;
+    font-size: 2rem;
+}
+
+/* The Wizard Cards (Glassmorphism) */
+.step {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    padding: 35px;
+    margin-bottom: 30px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 650px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.step.hidden {
+    display: none;
+}
+
+label {
+    font-weight: 600;
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Inputs, Selects, & Textareas */
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 14px 16px;
+    background-color: var(--input-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-main);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #8b5cf6;
+    box-shadow: 0 0 0 4px var(--input-focus-ring);
+}
+
+/* Custom Checkbox */
+input[type="checkbox"] {
+    accent-color: #8b5cf6;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.hasLab {
+    color: var(--text-main);
+    text-transform: none;
+    letter-spacing: normal;
+    font-size: 1rem;
+}
+
+/* Call to Action Buttons */
+button {
+    padding: 16px 24px;
+    background: var(--accent-gradient);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 25px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 14px rgba(139, 92, 246, 0.25);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+/* Disabled/Loading Button State */
+button:disabled {
+    background: #161b22; 
+    color: var(--text-muted);
+    border: 1px solid var(--border-color);
+    box-shadow: none;
+    cursor: not-allowed;
+    transform: none; 
+}
+
+/* Generated Division Blocks */
+#divisionContainer h3 {
+    margin-top: 0;
+    color: #8b5cf6;
+    font-size: 1.4rem;
+}
+
+#divisionContainer h4 {
+    margin-bottom: 12px;
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+hr {
+    border: none;
+    border-top: 1px dashed rgba(255, 255, 255, 0.15);
+    margin: 35px 0;
+}
+
+/* Special AI Constraint Box */
+.ai-box {
+    margin-top: 30px; 
+    background: rgba(139, 92, 246, 0.1); 
+    padding: 20px; 
+    border-radius: 8px;
+    border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.ai-box h4 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #8b5cf6;
+}
+
+.muted-text {
+    font-size: 0.85rem; 
+    color: var(--text-muted);
+    margin-bottom: 15px;
+}
+
+/* --- Timetable Grid Styling --- */
+.table-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    padding: 25px;
+    border-radius: 16px;
+    margin-bottom: 40px;
+    width: 100%;
+    overflow-x: auto; 
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.table-card h3 {
+    margin-top: 0;
+    color: #8b5cf6;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.timetable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 0.95rem;
+}
+
+.timetable th, .timetable td {
+    border: 1px solid var(--border-color);
+    padding: 12px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.timetable th {
+    background: rgba(139, 92, 246, 0.15);
+    color: #f0f6fc;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+/* Cleaned up table cell styles */
+.timetable td {
+    background: var(--input-bg);
+    color: #f0f6fc;
+    line-height: 1.4; /* Improves readability for stacked text */
+    font-size: 0.85rem;
+    padding: 10px 5px;
+    transition: background-color 0.2s ease;
+}
+
+.timetable td:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.timetable .time-col {
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.03);
+    color: #8b949e;
+    white-space: nowrap;
+}
+
+/* Make subject names bold like the reference image */
+.timetable td strong {
+    display: block;
+    color: #8b5cf6;
+    margin-bottom: 4px;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+}
+
+/* Styles the Room Number differently to stand out */
+.timetable td small {
+    display: block;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-top: 4px;
+}

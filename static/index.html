@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Timetable Generator</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <h2 id="mainHeading">AI Timetable Generator</h2>
+    
+    <div class="step" id="step1">
+        <h3>Step 1: Define Year & Divisions</h3>
+        <label>Select Year:</label>
+        <select id="yearSelect">
+            <option value="FY">First Year (FY)</option>
+            <option value="SY" selected>Second Year (SY)</option>
+            <option value="TY">Third Year (TY)</option>
+        </select>
+
+        <label>Number of Divisions:</label>
+        <input type="number" id="divCount" min="1" max="10" value="1">
+        
+        <button onclick="generateDivisions()">Next: Define Subjects</button>
+        
+        <button onclick="fillTestData()" style="background: #238636; margin-top: 15px;">⚡ Auto-Fill Test Data</button>
+    </div>
+
+    <div class="step hidden" id="step2">
+        <h3>Step 2: Define Subjects (Applied to all divisions)</h3>
+        <div id="subjectContainer"></div>
+        <button onclick="addSubjectRow()" style="background: rgba(255,255,255,0.1); color: white;">+ Add Another Subject</button>
+        <br><br>
+        <button onclick="generateRoomInputs()">Next: Assign Rooms & Faculty</button>
+    </div>
+
+    <div class="step hidden" id="step3">
+        <h3>Step 3: Division Assignments</h3>
+        <div id="divisionContainer"></div>
+        
+        <div class="ai-box">
+            <h4>🧠 AI Special Constraints</h4>
+            <p class="muted-text">Tell the AI any custom rules (e.g., "DAA only has 2 theory lectures per week" or "Professor KIR cannot teach on Mondays").</p>
+            <textarea id="specialConstraints" placeholder="Type your special rules here..."></textarea>
+        </div>
+
+        <button id="submitBtn" onclick="submitData()">Generate Timetable</button>
+    </div>
+
+    <div id="timetableResultContainer" style="width: 100%; max-width: 1100px; margin-top: 20px;"></div>
+  
+    <script>
+        // Add these near the top with your other variables
+       let generatedDivisions = [];
+       let globalSubjects = [];
+       let lastGeneratedData = null; // NEW: Stores data for the export
+       let lastGeneratedYear = null; // NEW: Stores the year for the export
+
+        function generateDivisions() {
+            const year = document.getElementById('yearSelect').value;
+            const count = parseInt(document.getElementById('divCount').value);
+            const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            
+            generatedDivisions = [];
+            for(let i = 0; i < count; i++) {
+                generatedDivisions.push(`${year}_${alphabet[i]}`); 
+            }
+            
+            document.getElementById('step2').classList.remove('hidden');
+            document.getElementById('subjectContainer').innerHTML = ""; // Reset
+            addSubjectRow(); 
+        }
+
+        function addSubjectRow() {
+            const container = document.getElementById('subjectContainer');
+            const html = `
+                <div class="subject-row" style="background:rgba(0,0,0,0.2); padding:15px; margin-bottom:10px; border-radius:8px; border: 1px solid rgba(255,255,255,0.1);">
+                    <input type="text" placeholder="Subject Name (e.g., DAA)" class="subName">
+                    <label style="display:inline-block; margin-top:10px; color:#f0f6fc; cursor:pointer;">
+                        <input type="checkbox" class="hasLab"> This subject has Practical Labs
+                    </label>
+                </div>
+            `;
+            container.insertAdjacentHTML('beforeend', html);
+        }
+
+        function generateRoomInputs() {
+            globalSubjects = [];
+            const names = document.querySelectorAll('.subName');
+            const labs = document.querySelectorAll('.hasLab');
+            names.forEach((input, index) => {
+                if(input.value.trim() !== "") {
+                    globalSubjects.push({ name: input.value.trim(), has_lab: labs[index].checked });
+                }
+            });
+
+            if (globalSubjects.length === 0) {
+                alert("Please enter at least one subject!");
+                return;
+            }
+
+            const container = document.getElementById('divisionContainer');
+            container.innerHTML = ""; 
+
+            generatedDivisions.forEach(divName => {
+                let divLetter = divName.split('_')[1]; 
+                
+                let html = `<div style="background: rgba(255,255,255,0.02); padding: 20px; border-radius: 8px; margin-bottom: 20px; border: 1px solid var(--border-color);">`;
+                html += `<h3 style="margin-top:0; color:#8b5cf6;">Division: ${divName}</h3>`;
+                html += `<label>Theory Classroom Number:</label>`;
+                html += `<input type="text" id="room_${divName}" placeholder="e.g., R-201">`;
+                
+                globalSubjects.forEach(sub => {
+                    html += `<div style="margin-top: 20px; padding-left: 15px; border-left: 3px solid #8b5cf6;">`;
+                    html += `<h4 style="margin: 0 0 10px 0;">${sub.name} Theory</h4>`;
+                    html += `<input type="text" id="fac_${divName}_${sub.name}" placeholder="Theory Faculty Name (e.g., KIR)">`;
+                    
+                    if (sub.has_lab) {
+                        html += `<h4 style="margin: 15px 0 10px 0; color: #8b949e;">${sub.name} Lab Batches</h4>`;
+                        html += `<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">`;
+                        
+                        for (let i = 1; i <= 3; i++) {
+                            let batchName = `${divLetter}${i}`; 
+                            html += `<div style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px;">`;
+                            html += `<strong style="color: #f0f6fc; font-size:0.9rem; display:block; margin-bottom:8px;">Batch ${batchName}</strong>`;
+                            html += `<input type="text" id="lab_room_${divName}_${sub.name}_${i}" placeholder="Room (e.g., S-103 A)" style="margin-bottom:8px;">`;
+                            html += `<input type="text" id="lab_fac_${divName}_${sub.name}_${i}" placeholder="Faculty">`;
+                            html += `</div>`;
+                        }
+                        html += `</div>`;
+                    }
+                    html += `</div>`;
+                });
+                html += `</div>`;
+                container.insertAdjacentHTML('beforeend', html);
+            });
+
+            document.getElementById('step3').classList.remove('hidden');
+        }
+
+        async function submitData() {
+            const btn = document.getElementById('submitBtn');
+            btn.innerText = "🧠 AI is calculating... Please wait";
+            btn.disabled = true;
+
+            const year = document.getElementById('yearSelect').value;
+            const constraints = document.getElementById('specialConstraints').value;
+
+            let payload = {
+                year: year,
+                special_constraints: constraints,
+                divisions: []
+            };
+
+            generatedDivisions.forEach(divName => {
+                let divLetter = divName.split('_')[1];
+                let divisionObj = {
+                    name: divName,
+                    theory_room: (document.getElementById(`room_${divName}`).value || "Unassigned").trim().toUpperCase(),
+                    subjects: []
+                };
+
+                globalSubjects.forEach(sub => {
+                    let subjectObj = {
+                        name: sub.name,
+                        has_lab: sub.has_lab,
+                        theory_faculty: document.getElementById(`fac_${divName}_${sub.name}`).value || "Unassigned",
+                        theory_lectures_per_week: 3 
+                    };
+
+                    if (sub.has_lab) {
+                        subjectObj.batches = [];
+                        for (let i = 1; i <= 3; i++) {
+                            let batchName = `${divLetter}${i}`;
+                            subjectObj.batches.push({
+                                name: batchName,
+                                lab_room: document.getElementById(`lab_room_${divName}_${sub.name}_${i}`).value || "Unassigned",
+                                faculty: document.getElementById(`lab_fac_${divName}_${sub.name}_${i}`).value || "Unassigned"
+                            });
+                        }
+                    }
+                    divisionObj.subjects.push(subjectObj);
+                });
+                payload.divisions.push(divisionObj);
+            });
+
+            try {
+                const response = await fetch('/api/generate', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+
+                if (response.ok && result.status === "success") {
+                    document.getElementById('step1').classList.add('hidden');
+                    document.getElementById('step2').classList.add('hidden');
+                    document.getElementById('step3').classList.add('hidden');
+                    document.getElementById('mainHeading').innerText = "✅ Timetable Generated Successfully";
+                    
+                    // NEW: Save data for the export button
+                    lastGeneratedData = result.data;
+                    lastGeneratedYear = year;
+                    renderTimetables(result.data, year);
+                } else {
+                    alert(`❌ Solver Error: ${result.detail || result.message}`);
+                }
+            } catch (error) {
+                console.error("Fetch error:", error);
+                alert("🚨 Critical Error: Could not connect to the Python server. Is FastAPI running?");
+            } finally {
+                btn.innerText = "Generate Timetable";
+                btn.disabled = false;
+            }
+        }
+
+       function renderTimetables(data, year) {
+            const container = document.getElementById('timetableResultContainer');
+            if (!data || Object.keys(data).length === 0) {
+                container.innerHTML = "<div class='ai-box' style='color: #ff4a4a;'>⚠️ No timetable data received.</div>";
+                return;
+            }
+            
+            // FIX: Notice the backticks (`) around the HTML here!
+            container.innerHTML = `
+                <div style="display: flex; justify-content: flex-end; margin-bottom: 20px;">
+                    <button onclick="downloadCSV()" style="width: auto; margin-top: 0; background: #238636;">
+                        📥 Export to Sheets / Excel
+                    </button>
+                </div>
+            `;
+            
+            const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+            const startHour = year === "FY" ? 8 : 10;
+            const endHour = year === "FY" ? 17 : 18;
+
+            Object.entries(data).forEach(([divName, schedule]) => {
+                let html = `<div class="table-card">`;
+                html += `<h3>Division: ${divName}</h3>`;
+                html += `<table class="timetable"><thead><tr><th>TIME</th>`;
+                days.forEach(d => html += `<th>${d.toUpperCase()}</th>`);
+                html += `</tr></thead><tbody>`;
+
+                for (let h = startHour; h < endHour; h++) {
+                    let timeLabel = `${h}:00 - ${h+1}:00`;
+                    
+                    // --- THE HARDCODED BREAK HAS BEEN COMPLETELY REMOVED FROM HERE ---
+
+                    html += `<tr><td class="time-col">${timeLabel}</td>`;
+                    days.forEach(day => {
+                        let cellData = (schedule[day] && schedule[day][h.toString()]) ? schedule[day][h.toString()] : "-";
+                        html += `<td>${cellData}</td>`;
+                    });
+                    html += `</tr>`;
+                }
+                html += `</tbody></table></div>`;
+                container.insertAdjacentHTML('beforeend', html);
+            });
+        }
+
+        // --- THE TIME SAVER: AUTO-FILL TEST DATA ---
+        function fillTestData() {
+            // Set Year and Div
+            document.getElementById('yearSelect').value = "SY";
+            document.getElementById('divCount').value = 1;
+            generateDivisions();
+            
+            // Set Subject 1 (With Lab)
+            const subNames = document.querySelectorAll('.subName');
+            const hasLabs = document.querySelectorAll('.hasLab');
+            subNames[0].value = "DAA";
+            hasLabs[0].checked = true;
+            
+            // Set Subject 2 (No Lab)
+            addSubjectRow();
+            const newSubNames = document.querySelectorAll('.subName');
+            newSubNames[1].value = "Math-IV";
+            
+            // Generate the room inputs
+            generateRoomInputs();
+            
+            // Fill Room and Faculty Data
+            document.getElementById('room_SY_A').value = "R-201";
+            document.getElementById('fac_SY_A_DAA').value = "KIR";
+            document.getElementById('fac_SY_A_Math-IV').value = "AI";
+            
+            // Fill Lab Data for DAA
+            for(let i=1; i<=3; i++) {
+                document.getElementById(`lab_room_SY_A_DAA_${i}`).value = "S-101 A";
+                document.getElementById(`lab_fac_SY_A_DAA_${i}`).value = "KIR";
+            }
+            
+            alert("✅ Test data loaded! Scroll down and click 'Generate Timetable'.");
+        }
+
+        // --- CSV EXPORT FUNCTION ---
+        function downloadCSV() {
+            if (!lastGeneratedData) {
+                alert("No timetable data to export!");
+                return;
+            }
+
+            let csvContent = "data:text/csv;charset=utf-8,";
+            const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+            const startHour = lastGeneratedYear === "FY" ? 8 : 10;
+            const endHour = 17; 
+
+            // 1. Create the Column Headers
+            csvContent += "Division,Time," + days.join(",") + "\n";
+
+            // 2. Loop through the data to create rows
+            for (const [divName, schedule] of Object.entries(lastGeneratedData)) {
+                for (let h = startHour; h < endHour; h++) {
+                    let timeLabel = `${h}:00 - ${h+1}:00`;
+                    let row = [`"${divName}"`, `"${timeLabel}"`];
+
+                    days.forEach(day => {
+                        let cellHTML = (schedule[day] && schedule[day][h.toString()]) ? schedule[day][h.toString()] : "-";
+
+                        // Clean up the HTML for Excel formatting
+                        let plainText = cellHTML
+                            .replace(/<br\s*[\/]?>/gi, "  |  ") // Replace line breaks with a pipe
+                            .replace(/<hr[^>]*>/gi, "  ///  ")  // Replace dashed lines with triple slash
+                            .replace(/<[^>]*>?/gm, "")          // Remove all remaining HTML tags (strong, small, div)
+                            .replace(/"/g, '""');               // Escape quotes for CSV safety
+
+                        // Ensure the word BREAK is clean
+                        if (plainText.includes("BREAK")) {
+                            plainText = "BREAK";
+                        }
+
+                        row.push(`"${plainText}"`);
+                    });
+                    
+                    csvContent += row.join(",") + "\n";
+                }
+                // Add an empty row between different divisions for readability
+                csvContent += ",,,,,,\n";
+            }
+
+            // 3. Trigger the invisible download
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "College_Timetable.csv");
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html>
