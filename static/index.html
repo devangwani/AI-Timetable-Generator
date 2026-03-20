@@ -8,7 +8,10 @@
 <body>
 
     <h2 id="mainHeading">AI Timetable Generator</h2>
-    
+    <div style="background: var(--card-bg); padding: 15px; border-radius: 8px; margin-bottom: 30px; border: 1px solid var(--border-color); display: flex; gap: 10px; max-width: 650px; width: 100%; box-sizing: border-box;">
+        <input type="text" id="facultySearchInput" placeholder="Enter Faculty Name (e.g., KIR)" style="flex: 1; margin: 0;">
+        <button onclick="searchFaculty()" style="width: auto; margin-top: 0;">🔍 Search</button>
+    </div>
     <div class="step" id="step1">
         <h3>Step 1: Define Year & Divisions</h3>
         <label>Select Year:</label>
@@ -347,6 +350,41 @@
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
+        }
+        // --- FACULTY SEARCH FUNCTION ---
+        async function searchFaculty() {
+            const name = document.getElementById('facultySearchInput').value.trim();
+            if(!name) {
+                alert("Please enter a faculty name.");
+                return;
+            }
+
+            try {
+                const response = await fetch(`/api/faculty/${name}`);
+                const result = await response.json();
+
+                if (response.ok && result.status === "success") {
+                    // Hide the setup wizard
+                    document.getElementById('step1').classList.add('hidden');
+                    document.getElementById('step2').classList.add('hidden');
+                    document.getElementById('step3').classList.add('hidden');
+                    
+                    // Update header
+                    document.getElementById('mainHeading').innerText = `👨‍🏫 Schedule for ${name.toUpperCase()}`;
+
+                    // Save data for the CSV Export button!
+                    lastGeneratedData = result.data; 
+                    lastGeneratedYear = "SY"; // Forces the grid to start at 10:00 AM
+                    
+                    // Render the table using our exact same beautiful grid function!
+                    renderTimetables(result.data, "SY"); 
+                } else {
+                    alert(`❌ ${result.detail || result.message}`);
+                }
+            } catch (error) {
+                console.error(error);
+                alert("🚨 Error connecting to server.");
+            }
         }
     </script>
 </body>

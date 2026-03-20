@@ -1,6 +1,10 @@
 from ortools.sat.python import cp_model
 
-def generate_schedule(data: dict):
+# NEW: Notice the locked_slots parameter that receives data from the database
+def generate_schedule(data: dict, locked_slots: dict = None):
+    if locked_slots is None:
+        locked_slots = {"faculty": {}, "rooms": {}}
+        
     model = cp_model.CpModel()
     year = data.get("year", "FY")
     divisions_data = data.get("divisions", [])
@@ -129,23 +133,41 @@ def generate_schedule(data: dict):
                 for b, acts in batch_labs.items():
                     model.Add(sum(acts) <= 1)
 
-    # F. Faculty & Room Clashes
+    # F. Faculty & Room Clashes (Now checks GLOBAL database locks!)
     for day in days:
         for h in hours:
+            # 1. Faculty Anti-Clash
             for fac in all_facs:
+                is_locked_globally = (day, h) in locked_slots["faculty"].get(fac, [])
                 fac_active = []
+                
                 for (d, s), info in theory_info.items():
-                    if info["fac"] == fac: fac_active.append(theory_vars[(d, s, day, h)])
+                    if info["fac"] == fac: 
+                        fac_active.append(theory_vars[(d, s, day, h)])
+                        if is_locked_globally: model.Add(theory_vars[(d, s, day, h)] == 0)
+                        
                 for (d, s, b), info in lab_info.items():
-                    if info["fac"] == fac: fac_active.append(lab_active_vars[(d, s, b, day, h)])
+                    if info["fac"] == fac: 
+                        fac_active.append(lab_active_vars[(d, s, b, day, h)])
+                        if is_locked_globally: model.Add(lab_active_vars[(d, s, b, day, h)] == 0)
+                        
                 model.Add(sum(fac_active) <= 1)
 
+            # 2. Room Anti-Clash
             for room in all_rooms:
+                is_locked_globally = (day, h) in locked_slots["rooms"].get(room, [])
                 room_active = []
+                
                 for (d, s), info in theory_info.items():
-                    if info["room"] == room: room_active.append(theory_vars[(d, s, day, h)])
+                    if info["room"] == room: 
+                        room_active.append(theory_vars[(d, s, day, h)])
+                        if is_locked_globally: model.Add(theory_vars[(d, s, day, h)] == 0)
+                        
                 for (d, s, b), info in lab_info.items():
-                    if info["room"] == room: room_active.append(lab_active_vars[(d, s, b, day, h)])
+                    if info["room"] == room: 
+                        room_active.append(lab_active_vars[(d, s, b, day, h)])
+                        if is_locked_globally: model.Add(lab_active_vars[(d, s, b, day, h)] == 0)
+                        
                 model.Add(sum(room_active) <= 1)
 
     # G. Work Hour Boundaries
@@ -157,7 +179,7 @@ def generate_schedule(data: dict):
                 
                 if year in ["SY", "TY"] and h < 10: model.Add(sum(all_active_vars) == 0)
 
-    # H. FIX 2: Exponential Optimization (Kills the Gaps)
+    # H. FIX 2: Exponential Optimization (Kills the Gaps) - KEPT INTACT!
     penalty_terms = []
     for d in div_names:
         for day in days:
@@ -180,6 +202,8 @@ def generate_schedule(data: dict):
     
     if status == cp_model.OPTIMAL or status == cp_model.FEASIBLE:
         timetable_data = {}
+        raw_data = [] # NEW: We collect the pure data to save to the database!
+        
         for d in div_names:
             timetable_data[d] = {}
             for day in days:
@@ -203,11 +227,15 @@ def generate_schedule(data: dict):
                     for (div, s), info in theory_info.items():
                         if div == d and solver.Value(theory_vars[(div, s, day, h)]) == 1:
                             contents.append(f"<strong>{s}</strong><br>{info['fac']}<br><small>{info['room']}</small>")
+                            # Save to Database
+                            raw_data.append({"division": div, "subject": s, "faculty": info['fac'], "room": info['room'], "day": day, "hour": h, "type": "Theory"})
 
                     lab_contents = []
                     for (div, s, b), info in lab_info.items():
                         if div == d and solver.Value(lab_active_vars[(div, s, b, day, h)]) == 1:
                             lab_contents.append(f"<strong>{s}-LAB ({b})</strong><br>{info['fac']}<br><small>{info['room']}</small>")
+                            # Save to Database
+                            raw_data.append({"division": div, "subject": f"{s}-LAB", "faculty": info['fac'], "room": info['room'], "day": day, "hour": h, "type": "Lab"})
 
                     if lab_contents:
                         contents.append("<hr style='margin:8px 0; border:none; border-top:1px dashed rgba(255,255,255,0.15);'>".join(lab_contents))
@@ -215,6 +243,6 @@ def generate_schedule(data: dict):
                     if contents: timetable_data[d][day][str(h)] = "".join(contents)
                     else: timetable_data[d][day][str(h)] = "-"
                         
-        return {"status": "success", "data": timetable_data}
+        return {"status": "success", "data": timetable_data, "raw_data": raw_data}
     
-    return {"status": "error", "message": "Clash detected! Impossible to schedule rules."}
+    return {"status": "error", "message": "Clash detected! Impossible to schedule rules based on currently locked faculty/rooms."}

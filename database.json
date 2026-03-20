@@ -1,0 +1,1298 @@
+[
+    {
+        "division": "SY_A",
+        "subject": "DAA-LAB",
+        "faculty": "KIR",
+        "room": "R-101A",
+        "day": "Monday",
+        "hour": 10,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_A",
+        "subject": "CGVR-LAB",
+        "faculty": "SHS",
+        "room": "S-205",
+        "day": "Monday",
+        "hour": 10,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_A",
+        "subject": "AM-IV-LAB",
+        "faculty": "AI",
+        "room": "R-203",
+        "day": "Monday",
+        "hour": 10,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_A",
+        "subject": "DAA-LAB",
+        "faculty": "KIR",
+        "room": "R-101A",
+        "day": "Monday",
+        "hour": 11,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_A",
+        "subject": "CGVR-LAB",
+        "faculty": "SHS",
+        "room": "S-205",
+        "day": "Monday",
+        "hour": 11,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_A",
+        "subject": "AM-IV-LAB",
+        "faculty": "AI",
+        "room": "R-203",
+        "day": "Monday",
+        "hour": 11,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_A",
+        "subject": "AM-IV",
+        "faculty": "AI",
+        "room": "R-201",
+        "day": "Monday",
+        "hour": 12,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_A",
+        "subject": "WP",
+        "faculty": "NIS",
+        "room": "R-201",
+        "day": "Monday",
+        "hour": 13,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_A",
+        "subject": "PFM",
+        "faculty": "PRN",
+        "room": "R-201",
+        "day": "Monday",
+        "hour": 15,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_A",
+        "subject": "CGVR",
+        "faculty": "SHS",
+        "room": "R-201",
+        "day": "Monday",
+        "hour": 16,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_A",
+        "subject": "DAA-LAB",
+        "faculty": "KIR",
+        "room": "R-101A",
+        "day": "Tuesday",
+        "hour": 10,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_A",
+        "subject": "AM-IV-LAB",
+        "faculty": "AI",
+        "room": "R-203",
+        "day": "Tuesday",
+        "hour": 10,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_A",
+        "subject": "WP-LAB",
+        "faculty": "NIS",
+        "room": "S-206",
+        "day": "Tuesday",
+        "hour": 10,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_A",
+        "subject": "DAA-LAB",
+        "faculty": "KIR",
+        "room": "R-101A",
+        "day": "Tuesday",
+        "hour": 11,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_A",
+        "subject": "AM-IV-LAB",
+        "faculty": "AI",
+        "room": "R-203",
+        "day": "Tuesday",
+        "hour": 11,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_A",
+        "subject": "WP-LAB",
+        "faculty": "NIS",
+        "room": "S-206",
+        "day": "Tuesday",
+        "hour": 11,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_A",
+        "subject": "OS",
+        "faculty": "SHC",
+        "room": "R-201",
+        "day": "Tuesday",
+        "hour": 12,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_A",
+        "subject": "AM-IV",
+        "faculty": "AI",
+        "room": "R-201",
+        "day": "Tuesday",
+        "hour": 13,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_A",
+        "subject": "CGVR",
+        "faculty": "SHS",
+        "room": "R-201",
+        "day": "Tuesday",
+        "hour": 15,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_A",
+        "subject": "DAA-LAB",
+        "faculty": "KIR",
+        "room": "R-101A",
+        "day": "Wednesday",
+        "hour": 10,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_A",
+        "subject": "OS-LAB",
+        "faculty": "SHC",
+        "room": "S-103A",
+        "day": "Wednesday",
+        "hour": 10,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_A",
+        "subject": "WP-LAB",
+        "faculty": "NIS",
+        "room": "S-206",
+        "day": "Wednesday",
+        "hour": 10,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_A",
+        "subject": "DAA-LAB",
+        "faculty": "KIR",
+        "room": "R-101A",
+        "day": "Wednesday",
+        "hour": 11,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_A",
+        "subject": "OS-LAB",
+        "faculty": "SHC",
+        "room": "S-103A",
+        "day": "Wednesday",
+        "hour": 11,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_A",
+        "subject": "WP-LAB",
+        "faculty": "NIS",
+        "room": "S-206",
+        "day": "Wednesday",
+        "hour": 11,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_A",
+        "subject": "WP",
+        "faculty": "NIS",
+        "room": "R-201",
+        "day": "Wednesday",
+        "hour": 12,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_A",
+        "subject": "EN",
+        "faculty": "PAJ",
+        "room": "R-201",
+        "day": "Wednesday",
+        "hour": 13,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_A",
+        "subject": "DAA",
+        "faculty": "KIR",
+        "room": "R-201",
+        "day": "Wednesday",
+        "hour": 15,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_A",
+        "subject": "CGVR-LAB",
+        "faculty": "SHS",
+        "room": "S-205",
+        "day": "Thursday",
+        "hour": 10,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_A",
+        "subject": "OS-LAB",
+        "faculty": "SHC",
+        "room": "S-103A",
+        "day": "Thursday",
+        "hour": 10,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_A",
+        "subject": "AM-IV-LAB",
+        "faculty": "AI",
+        "room": "R-203",
+        "day": "Thursday",
+        "hour": 10,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_A",
+        "subject": "CGVR-LAB",
+        "faculty": "SHS",
+        "room": "S-205",
+        "day": "Thursday",
+        "hour": 11,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_A",
+        "subject": "OS-LAB",
+        "faculty": "SHC",
+        "room": "S-103A",
+        "day": "Thursday",
+        "hour": 11,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_A",
+        "subject": "AM-IV-LAB",
+        "faculty": "AI",
+        "room": "R-203",
+        "day": "Thursday",
+        "hour": 11,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_A",
+        "subject": "OS",
+        "faculty": "SHC",
+        "room": "R-201",
+        "day": "Thursday",
+        "hour": 12,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_A",
+        "subject": "PFM",
+        "faculty": "PRN",
+        "room": "R-201",
+        "day": "Thursday",
+        "hour": 13,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_A",
+        "subject": "CGVR",
+        "faculty": "SHS",
+        "room": "R-201",
+        "day": "Thursday",
+        "hour": 15,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_A",
+        "subject": "DAA",
+        "faculty": "KIR",
+        "room": "R-201",
+        "day": "Thursday",
+        "hour": 16,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_A",
+        "subject": "CGVR-LAB",
+        "faculty": "SHS",
+        "room": "S-205",
+        "day": "Friday",
+        "hour": 10,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_A",
+        "subject": "OS-LAB",
+        "faculty": "SHC",
+        "room": "S-101C",
+        "day": "Friday",
+        "hour": 10,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_A",
+        "subject": "WP-LAB",
+        "faculty": "NIS",
+        "room": "S-206",
+        "day": "Friday",
+        "hour": 10,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_A",
+        "subject": "CGVR-LAB",
+        "faculty": "SHS",
+        "room": "S-205",
+        "day": "Friday",
+        "hour": 11,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_A",
+        "subject": "OS-LAB",
+        "faculty": "SHC",
+        "room": "S-101C",
+        "day": "Friday",
+        "hour": 11,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_A",
+        "subject": "WP-LAB",
+        "faculty": "NIS",
+        "room": "S-206",
+        "day": "Friday",
+        "hour": 11,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_A",
+        "subject": "EN",
+        "faculty": "PAJ",
+        "room": "R-201",
+        "day": "Friday",
+        "hour": 12,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_A",
+        "subject": "AM-IV",
+        "faculty": "AI",
+        "room": "R-201",
+        "day": "Friday",
+        "hour": 13,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_A",
+        "subject": "OS",
+        "faculty": "SHC",
+        "room": "R-201",
+        "day": "Friday",
+        "hour": 15,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_A",
+        "subject": "DAA",
+        "faculty": "KIR",
+        "room": "R-201",
+        "day": "Friday",
+        "hour": 16,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_B",
+        "subject": "CGVR-LAB",
+        "faculty": "RAG",
+        "room": "R-101B",
+        "day": "Monday",
+        "hour": 10,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_B",
+        "subject": "OS-LAB",
+        "faculty": "SAS",
+        "room": "S-103C",
+        "day": "Monday",
+        "hour": 10,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_B",
+        "subject": "AM-IV-LAB",
+        "faculty": "LP",
+        "room": "R-202",
+        "day": "Monday",
+        "hour": 10,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_B",
+        "subject": "CGVR-LAB",
+        "faculty": "RAG",
+        "room": "R-101B",
+        "day": "Monday",
+        "hour": 11,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_B",
+        "subject": "OS-LAB",
+        "faculty": "SAS",
+        "room": "S-103C",
+        "day": "Monday",
+        "hour": 11,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_B",
+        "subject": "AM-IV-LAB",
+        "faculty": "LP",
+        "room": "R-202",
+        "day": "Monday",
+        "hour": 11,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_B",
+        "subject": "PFM",
+        "faculty": "PRN",
+        "room": "R-202",
+        "day": "Monday",
+        "hour": 12,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_B",
+        "subject": "DAA",
+        "faculty": "SSM",
+        "room": "R-202",
+        "day": "Monday",
+        "hour": 13,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_B",
+        "subject": "AM-IV",
+        "faculty": "LP",
+        "room": "R-202",
+        "day": "Monday",
+        "hour": 15,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_B",
+        "subject": "AM-IV",
+        "faculty": "LP",
+        "room": "R-202",
+        "day": "Tuesday",
+        "hour": 10,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_B",
+        "subject": "EN",
+        "faculty": "PAJ",
+        "room": "R-202",
+        "day": "Tuesday",
+        "hour": 11,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_B",
+        "subject": "DAA-LAB",
+        "faculty": "SSM",
+        "room": "R-101A",
+        "day": "Tuesday",
+        "hour": 12,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_B",
+        "subject": "AM-IV-LAB",
+        "faculty": "LP",
+        "room": "R-203",
+        "day": "Tuesday",
+        "hour": 12,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_B",
+        "subject": "WP-LAB",
+        "faculty": "LJP",
+        "room": "S-206",
+        "day": "Tuesday",
+        "hour": 12,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_B",
+        "subject": "DAA-LAB",
+        "faculty": "SSM",
+        "room": "R-101A",
+        "day": "Tuesday",
+        "hour": 13,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_B",
+        "subject": "AM-IV-LAB",
+        "faculty": "LP",
+        "room": "R-203",
+        "day": "Tuesday",
+        "hour": 13,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_B",
+        "subject": "WP-LAB",
+        "faculty": "LJP",
+        "room": "S-206",
+        "day": "Tuesday",
+        "hour": 13,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_B",
+        "subject": "OS",
+        "faculty": "SAS",
+        "room": "R-202",
+        "day": "Tuesday",
+        "hour": 15,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_B",
+        "subject": "CGVR",
+        "faculty": "JC",
+        "room": "R-202",
+        "day": "Tuesday",
+        "hour": 16,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_B",
+        "subject": "OS-LAB",
+        "faculty": "SAS",
+        "room": "S-103C",
+        "day": "Wednesday",
+        "hour": 10,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_B",
+        "subject": "AM-IV-LAB",
+        "faculty": "LP",
+        "room": "R-203",
+        "day": "Wednesday",
+        "hour": 10,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_B",
+        "subject": "WP-LAB",
+        "faculty": "NEA",
+        "room": "S-301",
+        "day": "Wednesday",
+        "hour": 10,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_B",
+        "subject": "OS-LAB",
+        "faculty": "SAS",
+        "room": "S-103C",
+        "day": "Wednesday",
+        "hour": 11,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_B",
+        "subject": "AM-IV-LAB",
+        "faculty": "LP",
+        "room": "R-203",
+        "day": "Wednesday",
+        "hour": 11,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_B",
+        "subject": "WP-LAB",
+        "faculty": "NEA",
+        "room": "S-301",
+        "day": "Wednesday",
+        "hour": 11,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_B",
+        "subject": "CGVR",
+        "faculty": "JC",
+        "room": "R-202",
+        "day": "Wednesday",
+        "hour": 12,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_B",
+        "subject": "WP",
+        "faculty": "NIS",
+        "room": "R-202",
+        "day": "Wednesday",
+        "hour": 13,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_B",
+        "subject": "OS",
+        "faculty": "SAS",
+        "room": "R-202",
+        "day": "Wednesday",
+        "hour": 15,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_B",
+        "subject": "DAA-LAB",
+        "faculty": "BSP",
+        "room": "R-101A",
+        "day": "Thursday",
+        "hour": 10,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_B",
+        "subject": "CGVR-LAB",
+        "faculty": "RAG",
+        "room": "R-101B",
+        "day": "Thursday",
+        "hour": 10,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_B",
+        "subject": "WP-LAB",
+        "faculty": "NIS",
+        "room": "S-301",
+        "day": "Thursday",
+        "hour": 10,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_B",
+        "subject": "DAA-LAB",
+        "faculty": "BSP",
+        "room": "R-101A",
+        "day": "Thursday",
+        "hour": 11,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_B",
+        "subject": "CGVR-LAB",
+        "faculty": "RAG",
+        "room": "R-101B",
+        "day": "Thursday",
+        "hour": 11,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_B",
+        "subject": "WP-LAB",
+        "faculty": "NIS",
+        "room": "S-301",
+        "day": "Thursday",
+        "hour": 11,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_B",
+        "subject": "EN",
+        "faculty": "PAJ",
+        "room": "R-202",
+        "day": "Thursday",
+        "hour": 12,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_B",
+        "subject": "OS",
+        "faculty": "SAS",
+        "room": "R-202",
+        "day": "Thursday",
+        "hour": 13,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_B",
+        "subject": "DAA",
+        "faculty": "SSM",
+        "room": "R-202",
+        "day": "Thursday",
+        "hour": 15,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_B",
+        "subject": "WP",
+        "faculty": "NIS",
+        "room": "R-202",
+        "day": "Thursday",
+        "hour": 16,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_B",
+        "subject": "AM-IV",
+        "faculty": "LP",
+        "room": "R-202",
+        "day": "Friday",
+        "hour": 10,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_B",
+        "subject": "PFM",
+        "faculty": "PRN",
+        "room": "R-202",
+        "day": "Friday",
+        "hour": 11,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_B",
+        "subject": "DAA-LAB",
+        "faculty": "BSP",
+        "room": "R-101A",
+        "day": "Friday",
+        "hour": 12,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_B",
+        "subject": "CGVR-LAB",
+        "faculty": "RAG",
+        "room": "S-205",
+        "day": "Friday",
+        "hour": 12,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_B",
+        "subject": "OS-LAB",
+        "faculty": "SAS",
+        "room": "S-103C",
+        "day": "Friday",
+        "hour": 12,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_B",
+        "subject": "DAA-LAB",
+        "faculty": "BSP",
+        "room": "R-101A",
+        "day": "Friday",
+        "hour": 13,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_B",
+        "subject": "CGVR-LAB",
+        "faculty": "RAG",
+        "room": "S-205",
+        "day": "Friday",
+        "hour": 13,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_B",
+        "subject": "OS-LAB",
+        "faculty": "SAS",
+        "room": "S-103C",
+        "day": "Friday",
+        "hour": 13,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_B",
+        "subject": "DAA",
+        "faculty": "SSM",
+        "room": "R-202",
+        "day": "Friday",
+        "hour": 15,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_B",
+        "subject": "CGVR",
+        "faculty": "JC",
+        "room": "R-202",
+        "day": "Friday",
+        "hour": 16,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_C",
+        "subject": "CGVR-LAB",
+        "faculty": "JC",
+        "room": "S-301",
+        "day": "Monday",
+        "hour": 10,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_C",
+        "subject": "AM-IV-LAB",
+        "faculty": "AK",
+        "room": "P-302",
+        "day": "Monday",
+        "hour": 10,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_C",
+        "subject": "WP-LAB",
+        "faculty": "NIS",
+        "room": "S-206",
+        "day": "Monday",
+        "hour": 10,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_C",
+        "subject": "CGVR-LAB",
+        "faculty": "JC",
+        "room": "S-301",
+        "day": "Monday",
+        "hour": 11,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_C",
+        "subject": "AM-IV-LAB",
+        "faculty": "AK",
+        "room": "P-302",
+        "day": "Monday",
+        "hour": 11,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_C",
+        "subject": "WP-LAB",
+        "faculty": "NIS",
+        "room": "S-206",
+        "day": "Monday",
+        "hour": 11,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_C",
+        "subject": "AM-IV",
+        "faculty": "AK",
+        "room": "P-302",
+        "day": "Monday",
+        "hour": 12,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_C",
+        "subject": "EN",
+        "faculty": "PAJ",
+        "room": "P-302",
+        "day": "Monday",
+        "hour": 13,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_C",
+        "subject": "WP",
+        "faculty": "NEA",
+        "room": "P-302",
+        "day": "Monday",
+        "hour": 15,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_C",
+        "subject": "PFM",
+        "faculty": "PRN",
+        "room": "P-302",
+        "day": "Monday",
+        "hour": 16,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_C",
+        "subject": "OS-LAB",
+        "faculty": "SHC",
+        "room": "S-103B",
+        "day": "Tuesday",
+        "hour": 10,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_C",
+        "subject": "AM-IV-LAB",
+        "faculty": "AK",
+        "room": "P-302",
+        "day": "Tuesday",
+        "hour": 10,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_C",
+        "subject": "WP-LAB",
+        "faculty": "NEA",
+        "room": "S-301",
+        "day": "Tuesday",
+        "hour": 10,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_C",
+        "subject": "OS-LAB",
+        "faculty": "SHC",
+        "room": "S-103B",
+        "day": "Tuesday",
+        "hour": 11,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_C",
+        "subject": "AM-IV-LAB",
+        "faculty": "AK",
+        "room": "P-302",
+        "day": "Tuesday",
+        "hour": 11,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_C",
+        "subject": "WP-LAB",
+        "faculty": "NEA",
+        "room": "S-301",
+        "day": "Tuesday",
+        "hour": 11,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_C",
+        "subject": "WP",
+        "faculty": "NEA",
+        "room": "P-302",
+        "day": "Tuesday",
+        "hour": 12,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_C",
+        "subject": "EN",
+        "faculty": "PAJ",
+        "room": "P-302",
+        "day": "Tuesday",
+        "hour": 13,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_C",
+        "subject": "DAA",
+        "faculty": "SSM",
+        "room": "P-302",
+        "day": "Tuesday",
+        "hour": 15,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_C",
+        "subject": "DAA-LAB",
+        "faculty": "BSP",
+        "room": "R-101B",
+        "day": "Wednesday",
+        "hour": 10,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_C",
+        "subject": "CGVR-LAB",
+        "faculty": "JC",
+        "room": "S-205",
+        "day": "Wednesday",
+        "hour": 10,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_C",
+        "subject": "AM-IV-LAB",
+        "faculty": "AK",
+        "room": "P-302",
+        "day": "Wednesday",
+        "hour": 10,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_C",
+        "subject": "DAA-LAB",
+        "faculty": "BSP",
+        "room": "R-101B",
+        "day": "Wednesday",
+        "hour": 11,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_C",
+        "subject": "CGVR-LAB",
+        "faculty": "JC",
+        "room": "S-205",
+        "day": "Wednesday",
+        "hour": 11,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_C",
+        "subject": "AM-IV-LAB",
+        "faculty": "AK",
+        "room": "P-302",
+        "day": "Wednesday",
+        "hour": 11,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_C",
+        "subject": "AM-IV",
+        "faculty": "AK",
+        "room": "P-302",
+        "day": "Wednesday",
+        "hour": 12,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_C",
+        "subject": "CGVR",
+        "faculty": "JC",
+        "room": "P-302",
+        "day": "Wednesday",
+        "hour": 13,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_C",
+        "subject": "OS",
+        "faculty": "BSP",
+        "room": "P-302",
+        "day": "Wednesday",
+        "hour": 15,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_C",
+        "subject": "PFM",
+        "faculty": "PRN",
+        "room": "P-302",
+        "day": "Thursday",
+        "hour": 10,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_C",
+        "subject": "DAA",
+        "faculty": "SSM",
+        "room": "P-302",
+        "day": "Thursday",
+        "hour": 11,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_C",
+        "subject": "DAA-LAB",
+        "faculty": "KIR",
+        "room": "R-101A",
+        "day": "Thursday",
+        "hour": 12,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_C",
+        "subject": "CGVR-LAB",
+        "faculty": "JC",
+        "room": "S-205",
+        "day": "Thursday",
+        "hour": 12,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_C",
+        "subject": "OS-LAB",
+        "faculty": "BSP",
+        "room": "S-103B",
+        "day": "Thursday",
+        "hour": 12,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_C",
+        "subject": "DAA-LAB",
+        "faculty": "KIR",
+        "room": "R-101A",
+        "day": "Thursday",
+        "hour": 13,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_C",
+        "subject": "CGVR-LAB",
+        "faculty": "JC",
+        "room": "S-205",
+        "day": "Thursday",
+        "hour": 13,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_C",
+        "subject": "OS-LAB",
+        "faculty": "BSP",
+        "room": "S-103B",
+        "day": "Thursday",
+        "hour": 13,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_C",
+        "subject": "CGVR",
+        "faculty": "JC",
+        "room": "P-302",
+        "day": "Thursday",
+        "hour": 15,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_C",
+        "subject": "OS",
+        "faculty": "BSP",
+        "room": "P-302",
+        "day": "Thursday",
+        "hour": 16,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_C",
+        "subject": "DAA-LAB",
+        "faculty": "SSM",
+        "room": "R-101B",
+        "day": "Friday",
+        "hour": 10,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_C",
+        "subject": "OS-LAB",
+        "faculty": "SAS",
+        "room": "S-103C",
+        "day": "Friday",
+        "hour": 10,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_C",
+        "subject": "WP-LAB",
+        "faculty": "NEA",
+        "room": "S-301",
+        "day": "Friday",
+        "hour": 10,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_C",
+        "subject": "DAA-LAB",
+        "faculty": "SSM",
+        "room": "R-101B",
+        "day": "Friday",
+        "hour": 11,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_C",
+        "subject": "OS-LAB",
+        "faculty": "SAS",
+        "room": "S-103C",
+        "day": "Friday",
+        "hour": 11,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_C",
+        "subject": "WP-LAB",
+        "faculty": "NEA",
+        "room": "S-301",
+        "day": "Friday",
+        "hour": 11,
+        "type": "Lab"
+    },
+    {
+        "division": "SY_C",
+        "subject": "AM-IV",
+        "faculty": "AK",
+        "room": "P-302",
+        "day": "Friday",
+        "hour": 12,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_C",
+        "subject": "CGVR",
+        "faculty": "JC",
+        "room": "P-302",
+        "day": "Friday",
+        "hour": 13,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_C",
+        "subject": "OS",
+        "faculty": "BSP",
+        "room": "P-302",
+        "day": "Friday",
+        "hour": 15,
+        "type": "Theory"
+    },
+    {
+        "division": "SY_C",
+        "subject": "DAA",
+        "faculty": "SSM",
+        "room": "P-302",
+        "day": "Friday",
+        "hour": 16,
+        "type": "Theory"
+    }
+]
